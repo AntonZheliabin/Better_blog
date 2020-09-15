@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ publication.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ publication.title }}</h2>
+    <h3>Дата создания {{ publication.date_created|date:"H:i d/m/Y" }}</h3>
+    <h3>Дата публикации {{ publication.date|date:"H:i d/m/Y" }}</h3>
+    <h3>Дата последнего обновления {{ publication.date_modified|date:"H:i d/m/Y" }}</h3>
+    <p>{{ publication.image }}</p>
+    <p>{{ publication.content|safe }}</p>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+    <h1>Мои контакты</h1>
+    <p><i>Мыло:</i>{{ email }}<br><b>Телефон:</b>{{phone}}</p>
+    <p>Время на сервере: {{server_time}}</p>
+    <br>
+    <h2>Свяжитесь с нами</h2>
+
+    <form method="post" action="/contacts">
+        {% csrf_token %}
+
+        <input type="text" name="user_name" placeholder="Введите свое имя">
+        <br><br>
+        <input type="text" name="user_phone" placeholder="Введите свой номер телефона">
+        <br><br>
+        <textarea name="user_text" placeholder="Введите сообщение"></textarea>
+        <br><br>
+        <button>Отправить</button>
+    </form>
+
+{% endblock %}
